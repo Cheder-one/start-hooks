@@ -1,6 +1,26 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useRef, useState } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
+    const blockRef = useRef();
+    const smallRef = useRef();
+    console.log(blockRef.current);
+    console.log(smallRef.current);
+
+    const [blockStyle, setBlockStyle] = useState({
+        height: 40,
+        width: 60,
+        color: "white"
+    });
+
+    const handleChange = () => {
+        setBlockStyle((prev) => ({
+            height: 150,
+            width: 80,
+            ...prev
+        }));
+    };
+
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -13,14 +33,14 @@ const UseRefExercise = () => {
             </ul>
             <div
                 className="bg-primary d-flex flex-row justify-content-center align-items-center rounded"
-                style={{
-                    height: 40,
-                    width: 60,
-                    color: "white"
-                }}
+                style={blockStyle}
+                ref={blockRef}
             >
-                <small>Блок</small>
+                <small ref={smallRef}>Блок</small>
             </div>
+            <button className="btn btn-primary mt-2" onClick={handleChange}>
+                Change
+            </button>
         </CollapseWrapper>
     );
 };

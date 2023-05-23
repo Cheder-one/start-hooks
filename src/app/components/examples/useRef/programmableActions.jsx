@@ -29,12 +29,14 @@ const ProgrammableActionsExample = () => {
                 type="email"
                 className="form-control"
             />
-            <button className="btn btn-primary" onClick={handleClick}>
-                Фокус Input
-            </button>
-            <button className="btn btn-primary" onClick={handleClickWidth}>
-                Изменить Ширину
-            </button>
+            <div className="d-flex gap-2 mt-2">
+                <button className="btn btn-primary" onClick={handleClick}>
+                    Фокус Input
+                </button>
+                <button className="btn btn-primary" onClick={handleClickWidth}>
+                    Изменить Ширину
+                </button>
+            </div>
         </CardWrapper>
     );
 };
