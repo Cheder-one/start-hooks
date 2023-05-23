@@ -4,20 +4,22 @@ import CardWrapper from "../../common/Card";
 import SmallTitle from "../../common/typografy/smallTitle";
 const PrevStateExample = () => {
     const prevState = useRef("");
-    const [otherState, setOtherState] = useState("false");
+    const [currentState, setCurrentState] = useState("false");
 
     useEffect(() => {
-        prevState.current++;
-    });
+        prevState.current = currentState;
+    }, [currentState]);
 
     const handleChange = () => {
-        setOtherState((prev) => (prev === "false" ? "true" : "false"));
+        setCurrentState((prev) => (prev === "false" ? "true" : "false"));
     };
 
     return (
         <CardWrapper>
             <SmallTitle>Предыдущее состояние</SmallTitle>
-            <p>{`Render count: ${prevState.current}`}</p>
+            <hr />
+            <p>{`prevState: ${prevState.current}`}</p>
+            <p>{`currentState: ${currentState}`}</p>
             <button className="btn btn-primary" onClick={handleChange}>
                 Toggle other state
             </button>
