@@ -1,24 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 import CollapseWrapper from "../common/collapse";
+
 const UseRefExercise = () => {
     const blockRef = useRef();
     const smallRef = useRef();
-    console.log(blockRef.current);
-    console.log(smallRef.current);
 
-    const [blockStyle, setBlockStyle] = useState({
-        height: 40,
-        width: 60,
-        color: "white"
-    });
+    const [stateUpd, setStateUpd] = useState(0);
 
     const handleChange = () => {
-        setBlockStyle((prev) => ({
-            height: 150,
-            width: 80,
-            ...prev
-        }));
+        const { style } = blockRef.current;
+        style.color = "white";
+        style.width = "150px";
+        style.height = "150px";
+
+        smallRef.current.innerText = "text";
     };
 
     return (
@@ -33,7 +29,11 @@ const UseRefExercise = () => {
             </ul>
             <div
                 className="bg-primary d-flex flex-row justify-content-center align-items-center rounded"
-                style={blockStyle}
+                style={{
+                    height: 40,
+                    width: 60,
+                    color: "white"
+                }}
                 ref={blockRef}
             >
                 <small ref={smallRef}>Блок</small>
