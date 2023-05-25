@@ -1,31 +1,32 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2022: true
     },
     extends: ["plugin:react/recommended", "standard"],
     parserOptions: {
         ecmaFeatures: {
             jsx: true
         },
-        ecmaVersion: 12,
+        ecmaVersion: "latest",
         sourceType: "module"
     },
     plugins: ["react"],
     rules: {
+        "block-spacing": "off",
+        "brace-style": "off",
+        "multiline-ternary": "off",
+        // indent: ["error", 2],
+        indent: "off",
+        // Отступ количество пробелов
         semi: [2, "always"],
-        indent: [0, 4],
+        // Точка с запятой в конце строки
         "space-before-function-paren": [
             "error",
             { anonymous: "always", named: "never" }
         ],
-        "multiline-ternary": ["off"],
-        quotes: [
-            "error",
-            "double",
-            {
-                allowTemplateLiterals: true
-            }
-        ]
+        // Ошибка при наличии пробела при обозначении функции, уберём её
+        quotes: ["error", "double", { allowTemplateLiterals: true }]
+        // Использование двойных кавычек
     }
 };

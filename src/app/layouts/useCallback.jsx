@@ -6,6 +6,7 @@ import CardWrapper from "../components/common/Card";
 import Divider from "../components/common/divider";
 import Title from "../components/common/typografy/title";
 import Subtitle from "../components/common/typografy/subtitle";
+import { Parent } from "../components/examples/useCallback/useCallBack-txt";
 
 const UseCallbackExample = () => {
     return (
@@ -35,6 +36,7 @@ const UseCallbackExample = () => {
             <Divider />
             <Subtitle>Examples</Subtitle>
             <UseCallBackExample />
+            <Parent />
         </>
     );
 };
