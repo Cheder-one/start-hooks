@@ -13,6 +13,7 @@ module.exports = {
     },
     plugins: ["react"],
     rules: {
+        "react/display-name": "off",
         "block-spacing": "off",
         "brace-style": "off",
         "multiline-ternary": "off",
