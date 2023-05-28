@@ -1,34 +1,38 @@
 /* eslint-disable */
 import { faker } from "@faker-js/faker";
 
-const gender = faker.person.sex();
-const user1Name = faker.person.firstName(gender);
-const user2Name = faker.person.lastName(gender);
-const userPhone = faker.phone.number("501-###-###");
-const userEmail = faker.internet.email({
-   firstName: user1Name.toLowerCase(),
-   lastName: "",
-   provider: "mail.com"
+const fakeUsers = Array.from({ length: 10 }, (_, i) => {
+   const gender = faker.person.sex();
+   const user1Name = faker.person.firstName(gender);
+   const user2Name = faker.person.lastName(gender);
+   const userPhone = faker.phone.number("501-###-###");
+   const userEmail = `${user1Name.toLowerCase()}@mail.com`;
+
+   return {
+      name: `${user1Name} ${user2Name}`,
+      userGuid: `userGuid_${i}`,
+      phone: userPhone,
+      email: userEmail
+   };
 });
 
-const users = Array.from({ length: 10 }, (_, i) => ({
-   name: `${user1Name} ${user2Name}`,
-   userGuid: `userGuid_${i}`,
-   phone: userPhone,
-   email: userEmail
-}));
+if (!localStorage.getItem("fakeUsers")) {
+   localStorage.setItem("fakeUsers", JSON.stringify(fakeUsers));
+}
 
-export const fakeApiGetAllUsers = () =>
+export const getAllUsers = () =>
    new Promise((resolve) => {
       setTimeout(function () {
-         resolve(users);
+         resolve(JSON.parse(localStorage.getItem("fakeUsers")));
       }, 1000);
    });
 
-export const fakeApiGetUser = (userGuid) =>
+export const getUser = (userGuid) =>
    new Promise((resolve, reject) => {
       setTimeout(function () {
-         const user = users.find((user) => user.userGuid === userGuid);
+         const user = JSON.parse(localStorage.getItem("fakeUsers")).find(
+            (user) => user.userGuid === userGuid
+         );
          if (user) {
             resolve(user);
          } else {

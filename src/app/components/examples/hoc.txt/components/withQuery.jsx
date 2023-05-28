@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { fakeApiGetUser } from "../api/fake.api/users.api";
+import { getUser } from "../api/fake.api/users.api";
 
 // Компонент Высшего Порядка
 const withQuery = (Component) => {
@@ -10,7 +10,7 @@ const withQuery = (Component) => {
       const [error, setError] = useState(null);
 
       useEffect(() => {
-         fakeApiGetUser(userGuid)
+         getUser(userGuid)
             .then((r) => {
                setUser(r);
             })
