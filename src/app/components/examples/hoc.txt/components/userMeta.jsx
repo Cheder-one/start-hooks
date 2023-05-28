@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// Обычный Компонент
+// Обычный переиспользуемый Компонент
 const UserMeta = ({ name, email, phone }) => {
    return (
       <div className="card">

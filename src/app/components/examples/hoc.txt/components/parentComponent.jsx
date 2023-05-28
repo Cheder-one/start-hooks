@@ -2,7 +2,6 @@
 import React from "react";
 import withQuery from "./withQuery";
 import UserMeta from "./userMeta";
-import CardWrapper from "../../../common/Card";
 
 const UserMetaWithQuery = withQuery(UserMeta);
 
