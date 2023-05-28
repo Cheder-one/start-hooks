@@ -3,12 +3,13 @@ import React from "react";
 import withQuery from "./withQuery";
 import UserMeta from "./userMeta";
 
-// const UserMetaHOC = withQuery(UserMeta);
+const UserMetaWithQuery = withQuery(UserMeta);
 
 const ParentComponent = () => {
     return (
         <div>
             <h4>Parent Component</h4>
+            <UserMetaWithQuery userGuid="userGuid_0" />
         </div>
     );
 };
