@@ -8,7 +8,9 @@ const UserMeta = ({ name, email, phone }) => {
          <div className="card-body">
             <h3 className="card-title">{name}</h3>
             <div className="card-text">
-               Tel.: {phone}, email: {email}
+               Email: {email}
+               <br />
+               Tel.: {phone}
             </div>
          </div>
       </div>
