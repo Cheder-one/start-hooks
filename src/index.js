@@ -10,11 +10,11 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-    <BrowserRouter>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </BrowserRouter>
+   <BrowserRouter>
+      <React.StrictMode>
+         <App />
+      </React.StrictMode>
+   </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

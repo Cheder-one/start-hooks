@@ -9,38 +9,37 @@ import ProgrammableActionsExample from "../components/examples/useRef/programmab
 import RenderCountExample from "../components/examples/useRef/renderCount";
 import UseRefExercise from "../components/exercises/useRefExercise";
 const UseRefExample = () => {
-    return (
-        <>
-            <Title>useRef</Title>
-            <CollapseWrapper>
-                <BlockQuote>
-                    <p>
-                        <code>useRef</code> возвращает изменяемый ref-объект,
-                        свойство <code>.current</code> которого инициализируется
-                        переданным аргументом <code>(initialValue)</code>.
-                        Возвращённый объект будет сохраняться в течение всего
-                        времени жизни компонента.
-                    </p>
+   return (
+      <>
+         <Title>useRef</Title>
+         <CollapseWrapper>
+            <BlockQuote>
+               <p>
+                  <code>useRef</code> возвращает изменяемый ref-объект, свойство{" "}
+                  <code>.current</code> которого инициализируется переданным
+                  аргументом <code>(initialValue)</code>. Возвращённый объект
+                  будет сохраняться в течение всего времени жизни компонента.
+               </p>
 
-                    <figcaption className="blockquote-footer">
-                        <cite title="reactjs.org">reactjs.org</cite>
-                    </figcaption>
-                </BlockQuote>
-            </CollapseWrapper>
-            <Divider />
-            <div>
-                <Subtitle>Examples</Subtitle>
-                <RenderCountExample />
-                <PrevStateExample />
-                <ProgrammableActionsExample />
-            </div>
-            <Divider />
-            <div>
-                <Subtitle>Упражнения</Subtitle>
-                <UseRefExercise />
-            </div>
-        </>
-    );
+               <figcaption className="blockquote-footer">
+                  <cite title="reactjs.org">reactjs.org</cite>
+               </figcaption>
+            </BlockQuote>
+         </CollapseWrapper>
+         <Divider />
+         <div>
+            <Subtitle>Examples</Subtitle>
+            <RenderCountExample />
+            <PrevStateExample />
+            <ProgrammableActionsExample />
+         </div>
+         <Divider />
+         <div>
+            <Subtitle>Упражнения</Subtitle>
+            <UseRefExercise />
+         </div>
+      </>
+   );
 };
 
 export default UseRefExample;

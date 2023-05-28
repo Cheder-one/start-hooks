@@ -9,36 +9,36 @@ import Subtitle from "../components/common/typografy/subtitle";
 import { Parent } from "../components/examples/useCallback/useCallBack-txt";
 
 const UseCallbackExample = () => {
-    return (
-        <>
-            <Title>useCallback</Title>
+   return (
+      <>
+         <Title>useCallback</Title>
 
-            <Collapse title="Информация">
-                <BlockQuoteWrapper>
-                    <p>
-                        Аргументы: callBack, [array of dependencies]
-                        <br />
-                        Возвращает: Закэшированное значение выполненной функции,
-                        которое обновляется только при изменении зависимостей.
-                    </p>
+         <Collapse title="Информация">
+            <BlockQuoteWrapper>
+               <p>
+                  Аргументы: callBack, [array of dependencies]
+                  <br />
+                  Возвращает: Закэшированное значение выполненной функции,
+                  которое обновляется только при изменении зависимостей.
+               </p>
 
-                    <figcaption>
-                        <cite title="reactjs.org">reactjs.org</cite>
-                    </figcaption>
-                </BlockQuoteWrapper>
-            </Collapse>
+               <figcaption>
+                  <cite title="reactjs.org">reactjs.org</cite>
+               </figcaption>
+            </BlockQuoteWrapper>
+         </Collapse>
 
-            <CardWrapper>
-                <i className="bi bi-lightbulb"></i>{" "}
-                <code>useCallback(fn, deps)</code> ~{" "}
-                <code>useMemo(() =&gt; fn, deps)</code>
-            </CardWrapper>
-            <Divider />
-            <Subtitle>Examples</Subtitle>
-            <UseCallBackExample />
-            <Parent />
-        </>
-    );
+         <CardWrapper>
+            <i className="bi bi-lightbulb"></i>{" "}
+            <code>useCallback(fn, deps)</code> ~{" "}
+            <code>useMemo(() =&gt; fn, deps)</code>
+         </CardWrapper>
+         <Divider />
+         <Subtitle>Examples</Subtitle>
+         <UseCallBackExample />
+         <Parent />
+      </>
+   );
 };
 
 export default UseCallbackExample;
