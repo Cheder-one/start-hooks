@@ -10,9 +10,7 @@ const ParentComponent = () => {
    return (
       <>
          <p>Пользователь:</p>
-         <CardWrapper>
-            <UserMetaWithQuery userGuid="userGuid_0" />
-         </CardWrapper>
+         <UserMetaWithQuery userGuid="userGuid_0" />
       </>
    );
 };

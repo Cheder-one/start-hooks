@@ -1,9 +1,21 @@
 /* eslint-disable */
+import { faker } from "@faker-js/faker";
+
+const gender = faker.person.sex();
+const user1Name = faker.person.firstName(gender);
+const user2Name = faker.person.lastName(gender);
+const userPhone = faker.phone.number("501-###-###");
+const userEmail = faker.internet.email({
+   firstName: user1Name.toLowerCase(),
+   lastName: "",
+   provider: "mail.com"
+});
+
 const users = Array.from({ length: 10 }, (_, i) => ({
-   name: `User ${i + 1}`,
+   name: `${user1Name} ${user2Name}`,
    userGuid: `userGuid_${i}`,
-   phone: `555-1234-00${i}`,
-   email: `user${i + 1}@example.com`
+   phone: userPhone,
+   email: userEmail
 }));
 
 export const fakeApiGetAllUsers = () =>

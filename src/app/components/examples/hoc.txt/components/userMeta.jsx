@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 // Обычный Компонент
 const UserMeta = ({ name, email, phone }) => {
    return (
-      <div>
-         <h4>{name}</h4>
-         <p>
-            Tel.: {phone}, email: {email}
-         </p>
-         <div></div>
-         <hr />
+      <div className="card">
+         <div className="card-body">
+            <h3 className="card-title">{name}</h3>
+            <div className="card-text">
+               Tel.: {phone}, email: {email}
+            </div>
+         </div>
       </div>
    );
 };
