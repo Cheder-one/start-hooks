@@ -2,16 +2,19 @@
 import React from "react";
 import withQuery from "./withQuery";
 import UserMeta from "./userMeta";
+import CardWrapper from "../../../common/Card";
 
 const UserMetaWithQuery = withQuery(UserMeta);
 
 const ParentComponent = () => {
-    return (
-        <div>
-            <h4>Parent Component</h4>
+   return (
+      <div>
+         <p>Пользователь:</p>
+         <CardWrapper>
             <UserMetaWithQuery userGuid="userGuid_0" />
-        </div>
-    );
+         </CardWrapper>
+      </div>
+   );
 };
 
 export default ParentComponent;

@@ -5,21 +5,21 @@ import { fakeApiGetUser } from "../api/fake.api/users.api";
 
 // Компонент Высшего Порядка
 const withQuery = (Component) => {
-    return ({ userGuid }) => {
-        const [user, setUser] = useState(null);
+   return ({ userGuid }) => {
+      const [user, setUser] = useState(null);
 
-        useEffect(() => {
-            fakeApiGetUser(userGuid).then((r) => {
-                setUser(r);
-            });
-        }, [userGuid]);
+      useEffect(() => {
+         fakeApiGetUser(userGuid).then((r) => {
+            setUser(r);
+         });
+      }, [userGuid]);
 
-        return <>{user ? <Component {...user} /> : <div>Загрузка...</div>}</>;
-    };
+      return <>{user ? <Component {...user} /> : <div>Загрузка...</div>}</>;
+   };
 };
 
 withQuery.propTypes = {
-    userGuid: PropTypes.string.isRequired
+   userGuid: PropTypes.string.isRequired
 };
 
 export default withQuery;
