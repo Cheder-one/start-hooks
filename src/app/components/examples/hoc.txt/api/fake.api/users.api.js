@@ -1,3 +1,4 @@
+/* eslint-disable */
 const users = Array.from({ length: 10 }, (_, i) => ({
    name: `User ${i + 1}`,
    userGuid: `userGuid_${i}`,
@@ -13,8 +14,13 @@ export const fakeApiGetAllUsers = () =>
    });
 
 export const fakeApiGetUser = (userGuid) =>
-   new Promise((resolve) => {
+   new Promise((resolve, reject) => {
       setTimeout(function () {
-         resolve(users.find((user) => user.userGuid === userGuid));
+         const user = users.find((user) => user.userGuid === userGuid);
+         if (user) {
+            resolve(user);
+         } else {
+            reject(new Error("User not found"));
+         }
       }, 1000);
    });

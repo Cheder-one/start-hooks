@@ -8,12 +8,12 @@ const UserMetaWithQuery = withQuery(UserMeta);
 
 const ParentComponent = () => {
    return (
-      <div>
+      <>
          <p>Пользователь:</p>
          <CardWrapper>
             <UserMetaWithQuery userGuid="userGuid_0" />
          </CardWrapper>
-      </div>
+      </>
    );
 };
 
