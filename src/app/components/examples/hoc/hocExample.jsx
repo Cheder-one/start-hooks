@@ -5,6 +5,7 @@ import SmallTitle from "../../common/typografy/smallTitle";
 import Divider from "../../common/divider";
 import withLogin from "./withLogin";
 import withPropsStyles from "./withPropsStyles";
+import ParentComponent from "../hoc.txt/components/parentComponent";
 
 const HOCExample = () => {
     const ComponentWithAuth = withLogin(Component);
@@ -32,6 +33,11 @@ const HOCExample = () => {
                 <SmallTitle>4. Composed HOC</SmallTitle>
                 <hr />
                 <OptionalComponent />
+            </CardWrapper>
+            <CardWrapper>
+                <SmallTitle>HOC.txt</SmallTitle>
+                <hr />
+                <ParentComponent />
             </CardWrapper>
         </>
     );
