@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React from "react";
+
 const EditUserPhone = ({ value, onChange, onPhoneSave }) => {
    return (
       <div className="alert alert-success mt-2">
@@ -15,6 +17,7 @@ const EditUserPhone = ({ value, onChange, onPhoneSave }) => {
          </div>
       </div>
    );
+   /* eslint-disable */
 };
 
 export default EditUserPhone;
