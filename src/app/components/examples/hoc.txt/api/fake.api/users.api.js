@@ -33,6 +33,7 @@ export const getUser = (userGuid) =>
          const user = JSON.parse(localStorage.getItem("fakeUsers")).find(
             (user) => user.userGuid === userGuid
          );
+
          if (user) {
             resolve(user);
          } else {
@@ -40,3 +41,18 @@ export const getUser = (userGuid) =>
          }
       }, 1000);
    });
+
+export const updateUser = (userGuid, data) =>
+   new Promise((resolve) => {
+      setTimeout(function () {
+         const users = JSON.parse(localStorage.getItem("fakeUsers"));
+         const userIndex = users.findIndex(
+            (user) => user.userGuid === userGuid
+         );
+         users[userIndex] = { ...users[userIndex], ...data };
+         localStorage.setItem("fakeUsers", JSON.stringify(users));
+         resolve(users[userIndex]);
+      }, 1000);
+   });
+
+updateUser("userGuid_0", { phone: +123 });
