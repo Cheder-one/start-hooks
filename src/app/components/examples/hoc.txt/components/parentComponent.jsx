@@ -13,7 +13,7 @@ const ParentComponent = () => {
          <p>Пользователи:</p>
          <UserMetaWithQuery userGuid="userGuid_0" />
          <br />
-         <UserMetaWithEditUserPhone userGuid="userGuid_5" />
+         <UserMetaWithEditUserPhone userGuid="userGuid_1" />
       </>
    );
 };

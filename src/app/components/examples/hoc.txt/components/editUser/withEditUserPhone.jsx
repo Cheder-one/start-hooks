@@ -29,7 +29,7 @@ const withEditUserPhone = (Component) => {
          }
       };
 
-      const handlePhoneSave = (e) => {
+      const handlePhoneSave = () => {
          setInputData((prev) => ({
             ...prev,
             phone
