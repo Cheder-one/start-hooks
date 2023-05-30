@@ -2,18 +2,18 @@
 import React from "react";
 import withQuery from "./withQuery";
 import UserMeta from "./userMeta";
-import UserEditBtn from "./editUser/userEditBtn";
-import EditUserPhone from "./editUser/editUserPhone";
+import withEditUserPhone from "./editUser/withEditUserPhone";
 
 const UserMetaWithQuery = withQuery(UserMeta);
+const UserMetaWithEditUserPhone = withQuery(withEditUserPhone(UserMeta));
 
 const ParentComponent = () => {
    return (
       <>
-         <p>Пользователь:</p>
+         <p>Пользователи:</p>
          <UserMetaWithQuery userGuid="userGuid_0" />
-         <EditUserPhone />
-         <UserEditBtn />
+         <br />
+         <UserMetaWithEditUserPhone userGuid="userGuid_5" />
       </>
    );
 };
