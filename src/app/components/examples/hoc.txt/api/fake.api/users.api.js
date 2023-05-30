@@ -54,5 +54,3 @@ export const updateUser = (userGuid, data) =>
          resolve(users[userIndex]);
       }, 1000);
    });
-
-updateUser("userGuid_0", { phone: +123 });
