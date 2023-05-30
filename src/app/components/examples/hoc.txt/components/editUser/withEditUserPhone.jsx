@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import EditUserPhone from "./editUserPhone";
 import UserEditBtn from "./userEditBtn";
+import { updateUser } from "../../api/fake.api/users.api";
 
 const withEditUserPhone = (Component) => {
    return (props) => {
@@ -30,11 +31,20 @@ const withEditUserPhone = (Component) => {
       };
 
       const handlePhoneSave = () => {
-         setInputData((prev) => ({
-            ...prev,
-            phone
-         }));
+         updateUser(props.userGuid, { phone: phone }).then((res) =>
+            setInputData((prev) => ({
+               ...prev,
+               ...res
+            }))
+         );
+
          handleToggleEdit();
+      };
+
+      const handleEnterUp = (e) => {
+         if (e.key === "Enter") {
+            handlePhoneSave();
+         }
       };
 
       return (
@@ -45,6 +55,7 @@ const withEditUserPhone = (Component) => {
                   value={phone}
                   onChange={handleInputChange}
                   onPhoneSave={handlePhoneSave}
+                  onEnterUp={handleEnterUp}
                />
             ) : (
                <UserEditBtn onClick={handleToggleEdit} />
