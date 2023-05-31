@@ -9,6 +9,7 @@ import Title from "../components/common/typografy/title";
 import Divider from "../components/common/divider";
 import Subtitle from "../components/common/typografy/subtitle";
 import SmallTitle from "../components/common/typografy/smallTitle";
+import ReactMemo from "../components/examples/memo/memo.txt/reactMemo-txt";
 const MemoExample = () => {
    return (
       <>
@@ -79,6 +80,9 @@ const MemoExample = () => {
                </Link>
             </CardWrapper>
             <MemoDependencyFunctionExample />
+         </CardWrapper>
+         <CardWrapper>
+            <ReactMemo />
          </CardWrapper>
       </>
    );
