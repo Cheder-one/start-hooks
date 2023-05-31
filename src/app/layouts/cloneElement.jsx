@@ -7,6 +7,8 @@ import SmallTitle from "../components/common/typografy/smallTitle";
 import Subtitle from "../components/common/typografy/subtitle";
 import Title from "../components/common/typografy/title";
 import CloneElementExample from "../components/examples/cloneElement/cloneElementExample";
+import CheckSubscribe from "../components/examples/cloneElement/checkSubscrube";
+
 const CloneElement = () => {
    return (
       <>
@@ -42,6 +44,8 @@ const CloneElement = () => {
          <Divider />
          <Subtitle>Examples</Subtitle>
          <CloneElementExample />
+         <hr />
+         <CheckSubscribe />
       </>
    );
 };
