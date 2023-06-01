@@ -7,6 +7,7 @@ import Divider from "../components/common/divider";
 import Subtitle from "../components/common/typografy/subtitle";
 import ReactChildrenExample from "../components/examples/children/reactChildrenExample";
 import ChildrenExercise from "../components/exercises/childrenExercise";
+import SomeComponent from "../components/examples/children/reactChildren-txt";
 const ReactChildren = () => {
    return (
       <>
@@ -94,6 +95,7 @@ const ReactChildren = () => {
          <Subtitle>Examples</Subtitle>
 
          <ReactChildrenExample />
+         <SomeComponent />
          <Divider />
          <Subtitle>Упражнения</Subtitle>
          <ChildrenExercise />
