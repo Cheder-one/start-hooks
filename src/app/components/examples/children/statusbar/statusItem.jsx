@@ -1,20 +1,16 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
+import "./styles.css";
 
-const StatusItem = ({ children, value, isDone }) => {
-   console.log(value);
-   const getItemClass = () => {
-      return `step-progress-item ${isDone ? "is-done" : "current"}`;
-   };
-
+const StatusItem = ({ children, isDone }) => {
+   const className = `step-progress-item ${isDone ? "is-done" : "current"}`;
    return (
-      <div className={getItemClass}>
+      <div className={className}>
          <strong>{children}</strong>
       </div>
    );
 };
-
 StatusItem.propTypes = {
    children: PropTypes.string.isRequired,
    value: PropTypes.number.isRequired,
