@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import CollapseWrapper from "../common/collapse";
 
@@ -12,15 +13,26 @@ const ChildrenExercise = () => {
             <code>React.Children.toArray</code>
          </p>
 
-         <Component />
-         <Component />
-         <Component />
+         <ListComponent>
+            <Component />
+            <Component />
+            <Component />
+         </ListComponent>
       </CollapseWrapper>
    );
 };
 
-const Component = () => {
-   return <div>Компонент списка</div>;
+const ListComponent = ({ children }) => {
+   const childrenArray = React.Children.toArray(children);
+   return (
+      <div>
+         {childrenArray.map((child, i) => React.cloneElement(child, { i }))}
+      </div>
+   );
+};
+
+const Component = ({ i }) => {
+   return <div>Компонент списка {i}</div>;
 };
 
 export default ChildrenExercise;

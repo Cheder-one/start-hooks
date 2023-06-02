@@ -11,8 +11,12 @@ const StatusItem = ({ children, value, isDone, onDone }) => {
    };
 
    return (
-      <div className={className} onClick={handleClickDone}>
-         <strong style={{ cursor: "pointer" }}>{children}</strong>
+      <div
+         className={className}
+         style={{ cursor: "pointer" }}
+         onClick={handleClickDone}
+      >
+         <strong>{children}</strong>
       </div>
    );
 };
