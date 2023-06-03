@@ -3,7 +3,7 @@ import CardWrapper from "../../common/Card";
 
 const withFunctions = (Component) => {
    return (props) => {
-      const [isAuth, setIsAuth] = useState(false);
+      const [isAuth, setIsAuth] = useState(!!localStorage.getItem("auth"));
 
       const toggleAuth = () => {
          setIsAuth((prev) => !prev);

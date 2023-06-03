@@ -10,7 +10,7 @@ const SimpleComponent = ({ onLogin, onLogOut, isAuth, label }) => {
                Войти
             </button>
          ) : (
-            <button className="btn btn-primary" onClick={onLogOut}>
+            <button className="btn btn-secondary" onClick={onLogOut}>
                Выйти из системы
             </button>
          )}

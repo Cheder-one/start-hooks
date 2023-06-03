@@ -4,15 +4,13 @@ import CollapseWrapper from "../common/collapse";
 
 const UseRefExercise = () => {
    const blockRef = useRef();
-   const smallRef = useRef();
 
    const handleChange = () => {
-      const { style } = blockRef.current;
-      style.color = "white";
+      const { style, children } = blockRef.current;
       style.width = "150px";
       style.height = "150px";
 
-      smallRef.current.innerText = "text";
+      children[0].innerText = "text";
    };
 
    return (
@@ -34,7 +32,7 @@ const UseRefExercise = () => {
             }}
             ref={blockRef}
          >
-            <small ref={smallRef}>Блок</small>
+            <small>Блок</small>
          </div>
          <button className="btn btn-primary mt-2" onClick={handleChange}>
             Change

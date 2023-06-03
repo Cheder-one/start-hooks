@@ -26,13 +26,18 @@ const ListComponent = ({ children }) => {
    const childrenArray = React.Children.toArray(children);
    return (
       <div>
-         {childrenArray.map((child, i) => React.cloneElement(child, { i }))}
+         {childrenArray.map((child) =>
+            React.cloneElement(child, {
+               ...child.props,
+               num: Number(child.key.replace(".", "")) + 1
+            })
+         )}
       </div>
    );
 };
 
-const Component = ({ i }) => {
-   return <div>Компонент списка {i}</div>;
+const Component = ({ num }) => {
+   return <div>Компонент списка {num}</div>;
 };
 
 export default ChildrenExercise;
