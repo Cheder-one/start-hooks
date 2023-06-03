@@ -1,7 +1,11 @@
 import React from "react";
 import CollapseWrapper from "../common/collapse";
+import withFunctions from "./hocExercise/withFunctions";
+import SimpleComponent from "./hocExercise/simpleComponent";
 
 const HocExercise = () => {
+   const ComponentWithHoc = withFunctions(SimpleComponent);
+
    return (
       <CollapseWrapper title="Упражнение">
          <p className="mt-3">
@@ -36,7 +40,7 @@ const HocExercise = () => {
          </p>
          <ul>
             <li>
-               Добавит обертку на компонент в виде карточки boostrap (компонент{" "}
+               Добавит обертку на компонент в виде карточки bootstrap (компонент{" "}
                <code>components/common/Card.jsx</code>)
             </li>
             <li>
@@ -73,6 +77,8 @@ const HocExercise = () => {
             <code>onLogOut</code> кнопка в компоненте{" "}
             <code>SimpleComponent</code> обновится после перезагрузки страницы
          </p>
+         <hr />
+         <ComponentWithHoc />
       </CollapseWrapper>
    );
 };

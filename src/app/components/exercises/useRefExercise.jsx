@@ -1,12 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 
 const UseRefExercise = () => {
    const blockRef = useRef();
    const smallRef = useRef();
-
-   const [stateUpd, setStateUpd] = useState(0);
 
    const handleChange = () => {
       const { style } = blockRef.current;
