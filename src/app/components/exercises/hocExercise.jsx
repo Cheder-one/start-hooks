@@ -78,7 +78,7 @@ const HocExercise = () => {
             <code>SimpleComponent</code> обновится после перезагрузки страницы
          </p>
          <hr />
-         <ComponentWithHoc />
+         <ComponentWithHoc label="Login form" />
       </CollapseWrapper>
    );
 };
